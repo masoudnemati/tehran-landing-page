@@ -1,23 +1,22 @@
 import React from "react";
 
-const Branchs = () => {
+const Branchs = ({ activeName }) => {
   return (
     <>
       <div className="branches-container">
-        <p className="branch-name">شعبه غرب تهران</p>
+        <p className="branch-name">شعبه {activeName} تهران</p>
         <p>
-          <span>ساعات کار: </span>
-          از ۸<span> الی </span>
-          ۲۱
+          <span>ساعات کار: </span>۹ صبح<span> الی </span>
+          ۱۲ شب
         </p>
         <address>
           <span>آدرس: </span>
-          آدرس شعبه غرب تهران، محله فلانی، خیابان فلان، کوچه گلها
+          آدرس شعبه {activeName} تهران، محله فلانی، خیابان فلان، کوچه گلها
         </address>
         <div className="owner-tel">
           <p>
             <span>سرپرست واحد: </span>
-            آقای فلان فلانی
+            آقای {activeName} فلانی
           </p>
           <a href="tel:0900000000" className="tel">
             تماس با ۰۹۰۱۲۳۴۵۶۷۸
@@ -25,6 +24,14 @@ const Branchs = () => {
         </div>
       </div>
       <style jsx>{`
+        .branches-container {
+          padding: 1.25rem;
+          width: 435px;
+          background-color: rgba(255, 255, 255, 0.5);
+          backdrop-filter: blur(5px);
+          border-radius: 0.5rem;
+        }
+
         a {
           text-decoration: none;
           color: rgb(70, 70, 70);
@@ -32,15 +39,11 @@ const Branchs = () => {
 
         address span,
         p span {
-          color: darkgrey;
+          color: rgb(95, 95, 95);
         }
 
         address {
           margin: 2rem 0 1rem 0;
-        }
-
-        .branches-container {
-          margin: 0 2rem;
         }
 
         .branch-name {

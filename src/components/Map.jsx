@@ -6,16 +6,39 @@ import {
   Marker,
   Popup,
   Tooltip,
-  useMapEvents,
 } from "react-leaflet";
 
-const Map = () => {
-  let position = [35.7013340010605, 51.41378046383244];
+const Map = ({ position }) => {
   const mapRef = useRef(null);
+  const markerRef = useRef(null);
+
+  const markers = [
+    {
+      id: "north",
+      position: [35.749019463820396, 51.331987454699714],
+      name: "شمال",
+    },
+    {
+      id: "east",
+      position: [35.724270871909, 51.428299775422914],
+      name: "شرق",
+    },
+    {
+      id: "south",
+      position: [35.67752496742818, 51.34114281083511],
+      name: "جنوب",
+    },
+    {
+      id: "west",
+      position: [35.71426496644119, 51.255362964504286],
+      name: "غرب",
+    },
+  ];
 
   useEffect(() => {
-    console.log(mapRef);
-  }, []);
+    mapRef.current && mapRef.current.flyTo(position, 15);
+    // markerRef.current && markerRef.current.bindPopup("content").openPopup();
+  }, [position]);
 
   return (
     <div className="map-container">
@@ -24,19 +47,34 @@ const Map = () => {
         zoom={13}
         scrollWheelZoom={true}
         zoomControl={false}
-        style={{ height: 260, width: 300 }}
+        style={{ height: 260, width: 350 }}
         ref={mapRef}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>شعبه غرب تهران</Popup>
-          <Tooltip direction="top" offset={[83, -7]} opacity={1} permanent>
-            شعبه غرب تهران
-          </Tooltip>
-        </Marker>
+
+        {markers.map((marker) => {
+          return (
+            <Marker position={marker.position} key={marker.id}>
+              {/* <Popup>شعبه {marker.name} تهران</Popup> */}
+              <Tooltip direction="top" offset={[88, -7]} opacity={1} permanent>
+                <p
+                  style={{
+                    width: 90,
+                    textAlign: "center",
+                    borderRadius: "60px",
+                    padding: 0,
+                    margin: 0,
+                  }}
+                >
+                  شعبه {marker.name} تهران
+                </p>
+              </Tooltip>
+            </Marker>
+          );
+        })}
       </MapContainer>
       <style jsx>{`
         .map-container {
