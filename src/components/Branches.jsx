@@ -101,6 +101,15 @@ const Branchs = ({ activeName }) => {
             rgba(0, 0, 0, 0.1) 0 3px 5px, rgba(0, 0, 0, 0.1) 0 10px 13px;
           transform: scale(1.05);
         }
+
+        @media screen and (max-width: 900px) {
+          .branches-container {
+            min-width: 200px;
+            max-width: 400px;
+            padding: 1rem 5vw;
+            margin: 0 0 1rem 0;
+          }
+        }
       `}</style>
     </>
   );

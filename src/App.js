@@ -76,6 +76,15 @@ function App() {
             align-items: center;
             margin-bottom: 1rem;
           }
+
+          @media screen and (max-width: 900px) {
+            .map-branches {
+              padding: 1rem 0;
+              flex-direction: column-reverse;
+              justify-content: center;
+              align-items: center;
+            }
+          }
         `}</style>
       </main>
     </>

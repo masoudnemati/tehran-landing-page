@@ -66,6 +66,8 @@ const Directions = ({
           justify-content: center;
           align-items: center;
           backdrop-filter: blur(5px);
+          padding: 0;
+          margin: 0;
         }
 
         .directions-middle {
@@ -123,6 +125,20 @@ const Directions = ({
           background-color: ${activeDir === "east"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};
+        }
+
+        @media screen and (max-width: 900px) {
+          .directions-container {
+            width: 200px;
+            height: auto;
+            padding: 1rem;
+            margin: 0 0 1rem 0;
+          }
+
+          button {
+            width: 70px;
+            height: 30px;
+          }
         }
       `}</style>
     </>
