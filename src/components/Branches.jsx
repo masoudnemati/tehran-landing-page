@@ -1,6 +1,6 @@
 import React from "react";
 
-const Branchs = ({ activeName }) => {
+const Branchs = ({ activeName, branchTel, workerTel, address }) => {
   return (
     <>
       <div className="branches-container">
@@ -11,21 +11,32 @@ const Branchs = ({ activeName }) => {
         </p>
         <address>
           <span>آدرس: </span>
-          آدرس شعبه {activeName} تهران، محله فلانی، خیابان فلان، کوچه گلها
+          {address}
         </address>
         <div className="owner-tel">
-          <p>
+          {/* <p>
             <span>سرپرست واحد: </span>
             آقای {activeName} فلانی
-          </p>
-          <a href="tel:0900000000" className="tel">
-            تماس با ۰۹۰۱۲۳۴۵۶۷۸
-          </a>
+          </p> */}
+          <div className="tel-container">
+            <a href={`tel:${branchTel}`} className="tel">
+              {branchTel}
+            </a>
+            <span className="tel-des">تماس با تلفن شعبه</span>
+          </div>
+          {workerTel && (
+            <div className="tel-container">
+              <a href={`tel:${workerTel}`} className="tel">
+                {workerTel}
+              </a>
+              <span className="tel-des">تماس با سرپرست واحد</span>
+            </div>
+          )}
         </div>
       </div>
       <style jsx>{`
         .branches-container {
-          padding: 1.25rem;
+          padding: 1rem 1.25rem;
           width: 435px;
           background-color: rgba(255, 255, 255, 0.5);
           backdrop-filter: blur(5px);
@@ -35,6 +46,7 @@ const Branchs = ({ activeName }) => {
         a {
           text-decoration: none;
           color: rgb(70, 70, 70);
+          font-size: medium;
         }
 
         address span,
@@ -44,6 +56,13 @@ const Branchs = ({ activeName }) => {
 
         address {
           margin: 2rem 0 1rem 0;
+        }
+
+        .tel-container {
+          display: inline-flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         .branch-name {
@@ -102,12 +121,33 @@ const Branchs = ({ activeName }) => {
           transform: scale(1.05);
         }
 
+        .tel-des {
+          color: rgb(65, 65, 65);
+          font-size: small;
+          margin-top: 5px;
+        }
+
         @media screen and (max-width: 900px) {
           .branches-container {
-            min-width: 200px;
-            max-width: 400px;
+            width: auto;
+            min-width: 270px;
             padding: 1rem 5vw;
-            margin: 0 0 1rem 0;
+            margin: 0;
+            border-radius: 0;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+          }
+
+          address {
+            margin: 1rem 0 0.5rem 0;
+          }
+
+          .branch-name {
+            margin-bottom: 1rem;
+          }
+
+          .tel {
+            font-size: small;
           }
         }
       `}</style>

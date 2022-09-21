@@ -5,6 +5,9 @@ const Directions = ({
   activeDir,
   setActiveDir,
   setActiveName,
+  setBranchTel,
+  setWorkerTel,
+  setAddress,
 }) => {
   return (
     <>
@@ -13,9 +16,12 @@ const Directions = ({
           <button
             className="north"
             onClick={() => {
-              setPosition([35.749019463820396, 51.331987454699714]);
+              setPosition([35.75174002351506, 51.26625291053583]);
               setActiveDir("north");
               setActiveName("شمال");
+              setBranchTel("02122171477");
+              setWorkerTel("09028193128");
+              setAddress("شمال تهران، بیست و دوم");
             }}
           >
             شمال
@@ -24,30 +30,67 @@ const Directions = ({
             <button
               className="east"
               onClick={() => {
-                setPosition([35.724270871909, 51.428299775422914]);
+                setPosition([35.72059244184825, 51.500311410524574]);
                 setActiveDir("east");
                 setActiveName("شرق");
+                setBranchTel("02177682493");
+                setWorkerTel("09391052336");
+                setAddress("شرق تهران، خدابنده لو");
               }}
             >
               شرق
             </button>
             <button
-              className="west"
+              className="middle"
               onClick={() => {
-                setPosition([35.71426496644119, 51.255362964504286]);
-                setActiveDir("west");
-                setActiveName("غرب");
+                setPosition([35.71482149218997, 51.427813468591225]);
+                setActiveDir("middle");
+                setActiveName("مرکز");
+                setBranchTel("02188314410");
+                setWorkerTel("09362175781");
+                setAddress("مرکز تهران");
               }}
             >
-              غرب
+              مرکز
             </button>
+            <div className="west-west-city">
+              <button
+                className="west"
+                onClick={() => {
+                  setPosition([35.703656, 51.320131]);
+                  setActiveDir("west");
+                  setActiveName("غرب");
+                  setBranchTel("02144570530");
+                  setWorkerTel("09120974053");
+                  setAddress("غرب تهران");
+                }}
+              >
+                غرب
+              </button>
+              <button
+                className="west-city"
+                onClick={() => {
+                  setPosition([35.7694430672955, 51.35531532682283]);
+                  setActiveDir("west-city");
+                  setActiveName("شهرک غرب");
+                  setBranchTel("02188195425");
+                  setWorkerTel(false);
+                  setAddress("شهرک غرب، بلوار نورانی");
+                }}
+              >
+                شهرک غرب
+              </button>
+            </div>
           </div>
           <button
             className="south"
             onClick={() => {
-              setPosition([35.67752496742818, 51.34114281083511]);
+              setPosition([35.689081864342604, 51.384007484658525]);
               setActiveDir("south");
               setActiveName("جنوب");
+              setWorkerTel("02166839505");
+              setWorkerTel(false);
+              setAddress("جنوب تهران، خیابان کمالی");
             }}
           >
             جنوب
@@ -56,7 +99,7 @@ const Directions = ({
       </div>
       <style jsx>{`
         .directions-container {
-          width: 200px;
+          padding: 0 1rem;
           height: 260px;
           border-radius: 3.5rem;
           box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
@@ -66,7 +109,6 @@ const Directions = ({
           justify-content: center;
           align-items: center;
           backdrop-filter: blur(5px);
-          padding: 0;
           margin: 0;
         }
 
@@ -74,12 +116,12 @@ const Directions = ({
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
-          justify-content: center;
-          align-items: center;
+          justify-content: flex-start;
+          align-items: flex-start;
         }
 
         button {
-          width: 70px;
+          width: 80px;
           height: 60px;
           padding: 0;
           background-color: rgba(255, 255, 255, 0.8);
@@ -100,6 +142,13 @@ const Directions = ({
           background-color: green;
         }
 
+        .west-west-city {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
         .north {
           margin-bottom: 10px;
           background-color: ${activeDir === "north"
@@ -108,7 +157,22 @@ const Directions = ({
         }
 
         .west {
+          height: 30px;
           background-color: ${activeDir === "west"
+            ? "#C8FACC"
+            : "rgba(255, 255, 255, 1)"};
+        }
+
+        .west-city {
+          height: 30px;
+          background-color: ${activeDir === "west-city"
+            ? "#C8FACC"
+            : "rgba(255, 255, 255, 1)"};
+        }
+
+        .middle {
+          margin: 0 10px;
+          background-color: ${activeDir === "middle"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};
         }
@@ -121,7 +185,6 @@ const Directions = ({
         }
 
         .east {
-          margin-left: 20px;
           background-color: ${activeDir === "east"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};
@@ -129,15 +192,9 @@ const Directions = ({
 
         @media screen and (max-width: 900px) {
           .directions-container {
-            width: 200px;
-            height: auto;
-            padding: 1rem;
+            width: 100vw;
+            padding: 0;
             margin: 0 0 1rem 0;
-          }
-
-          button {
-            width: 70px;
-            height: 30px;
           }
         }
       `}</style>

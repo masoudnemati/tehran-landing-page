@@ -6,11 +6,12 @@ import { useState } from "react";
 import ContactManager from "./components/ContactManager";
 
 function App() {
-  const [position, setPosition] = useState([
-    35.714515008077015, 51.26831135597801,
-  ]);
+  const [position, setPosition] = useState([35.703656, 51.320131]);
   const [activeDir, setActiveDir] = useState("west");
   const [activeName, setActiveName] = useState("غرب");
+  const [branchTel, setBranchTel] = useState("02144570530");
+  const [workerTel, setWorkerTel] = useState("09120974053");
+  const [address, setAddress] = useState("غرب تهران، ");
 
   return (
     <>
@@ -18,20 +19,32 @@ function App() {
         <div className="header-container">
           {/* <div className="header-img"> */}
           <p className="header">
-            به صورت ۲۴ ساعته در ۷ روز هفته <br /> جهت اعزام تعمیرکار ابتدا شعبه
-            مورد نظر خود را انتخاب کرده و سپس تماس بگیرید:
+            به صورت
+            <b> ۲۴ </b>
+            ساعته در
+            <b> ۷ </b>
+            روز هفته <br /> جهت اعزام تعمیرکار ابتدا شعبه مورد نظر خود را انتخاب
+            کرده و سپس تماس بگیرید:
           </p>
           {/* <img src="/siamak-kVACg-kVKA0-unsplash.jpg" width="300" alt="" /> */}
           {/* </div> */}
         </div>
         <div className="map-branches">
           <Map position={position} />
-          <Branches activeName={activeName} />
+          <Branches
+            activeName={activeName}
+            branchTel={branchTel}
+            workerTel={workerTel}
+            address={address}
+          />
           <Directions
             setPosition={setPosition}
             activeDir={activeDir}
             setActiveDir={setActiveDir}
             setActiveName={setActiveName}
+            setBranchTel={setBranchTel}
+            setWorkerTel={setWorkerTel}
+            setAddress={setAddress}
           />
         </div>
         <ContactManager />
@@ -40,7 +53,7 @@ function App() {
           main {
             background-image: url("/siamak-kVACg-kVKA0-unsplash.jpg");
             background-attachment: fixed;
-            background-position: right 30% bottom 35%;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
           }
@@ -65,16 +78,6 @@ function App() {
             border-radius: 0.5rem;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-          }
-
-          .header-img {
-            padding: 0 5vw;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 1rem;
           }
 
           @media screen and (max-width: 900px) {
