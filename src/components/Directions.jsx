@@ -65,6 +65,7 @@ const Directions = ({
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          backdrop-filter: blur(5px);
         }
 
         .directions-middle {
@@ -83,6 +84,9 @@ const Directions = ({
           border: 1px solid lightgray;
           border-radius: 0.5rem;
           transition: background-color 0.3s linear;
+          box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
         }
 
         button:hover {
@@ -98,27 +102,27 @@ const Directions = ({
           margin-bottom: 10px;
           background-color: ${activeDir === "north"
             ? "#C8FACC"
-            : "rgba(255, 255, 255, 0.75)"};
+            : "rgba(255, 255, 255, 1)"};
         }
 
         .west {
           background-color: ${activeDir === "west"
             ? "#C8FACC"
-            : "rgba(255, 255, 255, 0.75)"};
+            : "rgba(255, 255, 255, 1)"};
         }
 
         .south {
           margin-top: 10px;
           background-color: ${activeDir === "south"
             ? "#C8FACC"
-            : "rgba(255, 255, 255, 0.75)"};
+            : "rgba(255, 255, 255, 1)"};
         }
 
         .east {
           margin-left: 20px;
           background-color: ${activeDir === "east"
             ? "#C8FACC"
-            : "rgba(255, 255, 255, 0.75)"};
+            : "rgba(255, 255, 255, 1)"};
         }
       `}</style>
     </>
