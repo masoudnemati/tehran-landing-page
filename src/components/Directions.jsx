@@ -16,7 +16,7 @@ const Directions = ({
           <button
             className="north"
             onClick={() => {
-              setPosition([35.75174002351506, 51.26625291053583]);
+              setPosition([35.808121247699546, 51.400987416315644]);
               setActiveDir("north");
               setActiveName("شمال");
               setBranchTel("02122171477");

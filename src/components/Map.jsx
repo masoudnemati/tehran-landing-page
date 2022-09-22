@@ -7,7 +7,7 @@ const Map = ({ position }) => {
   const markers = [
     {
       id: "north",
-      position: [35.75174002351506, 51.26625291053583],
+      position: [35.808121247699546, 51.400987416315644],
       name: "شمال",
     },
     {
