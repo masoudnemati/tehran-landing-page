@@ -21,7 +21,7 @@ const Directions = ({
               setActiveName("شمال");
               setBranchTel("02122171477");
               setWorkerTel("09028193128");
-              setAddress("شمال تهران، بیست و دوم");
+              setAddress("شمال تهران، ولنجک");
             }}
           >
             شمال
@@ -88,7 +88,7 @@ const Directions = ({
               setPosition([35.689081864342604, 51.384007484658525]);
               setActiveDir("south");
               setActiveName("جنوب");
-              setWorkerTel("02166839505");
+              setBranchTel("02166839505");
               setWorkerTel(false);
               setAddress("جنوب تهران، خیابان کمالی");
             }}
