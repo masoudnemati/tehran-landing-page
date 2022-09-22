@@ -84,7 +84,7 @@ function App() {
             .map-branches {
               padding: 1rem 0;
               flex-direction: column-reverse;
-              justify-content: center;
+              justify-content: stretch;
               align-items: center;
             }
           }

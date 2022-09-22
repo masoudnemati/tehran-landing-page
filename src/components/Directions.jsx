@@ -192,9 +192,13 @@ const Directions = ({
 
         @media screen and (max-width: 900px) {
           .directions-container {
-            width: 100vw;
-            padding: 0;
-            margin: 0 0 1rem 0;
+            width: 275px;
+            height: 230px;
+            padding: 0 1rem;
+            margin: 0;
+            backdrop-filter: none;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
           }
         }
       `}</style>

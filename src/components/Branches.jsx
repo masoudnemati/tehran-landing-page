@@ -43,12 +43,6 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
           border-radius: 0.5rem;
         }
 
-        a {
-          text-decoration: none;
-          color: rgb(70, 70, 70);
-          font-size: medium;
-        }
-
         address span,
         p span {
           color: rgb(95, 95, 95);
@@ -81,6 +75,9 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
         }
 
         .tel {
+          text-decoration: none;
+          color: rgb(70, 70, 70);
+          font-size: medium;
           background-color: #0078d0;
           border: 0;
           border-radius: 56px;
@@ -129,13 +126,12 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
 
         @media screen and (max-width: 900px) {
           .branches-container {
-            width: auto;
-            min-width: 270px;
-            padding: 1rem 5vw;
+            width: 275px;
+            padding: 0.25rem 1rem;
             margin: 0;
             border-radius: 0;
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
+            backdrop-filter: none;
+            background-color: rgba(255, 255, 255, 0.7);
           }
 
           address {

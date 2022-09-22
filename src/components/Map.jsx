@@ -94,7 +94,11 @@ const Map = ({ position }) => {
         @media screen and (max-width: 900px) {
           .map-container {
             border-radius: 0;
-            width: 100%;
+            width: 307px;
+            height: 150px;
+            padding: 0;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
           }
         }
       `}</style>
