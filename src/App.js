@@ -4,6 +4,7 @@ import Map from "./components/Map";
 import Branches from "./components/Branches";
 import { useState } from "react";
 import ContactManager from "./components/ContactManager";
+import SocialMedia from "./components/SocialMedia";
 
 function App() {
   const [position, setPosition] = useState([35.703656, 51.320131]);
@@ -47,7 +48,8 @@ function App() {
             setAddress={setAddress}
           />
         </div>
-        <ContactManager />
+        {/* <ContactManager /> */}
+        <SocialMedia />
 
         <style jsx>{`
           main {

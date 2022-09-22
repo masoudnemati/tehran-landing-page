@@ -95,7 +95,7 @@ const Map = ({ position }) => {
           .map-container {
             border-radius: 0;
             width: 307px;
-            height: 150px;
+            height: 263px;
             padding: 0;
             border-bottom-right-radius: 0.5rem;
             border-bottom-left-radius: 0.5rem;
