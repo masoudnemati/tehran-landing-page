@@ -48,8 +48,8 @@ function App() {
             setAddress={setAddress}
           />
         </div>
-        {/* <ContactManager /> */}
         <SocialMedia />
+        <ContactManager />
 
         <style jsx>{`
           main {
