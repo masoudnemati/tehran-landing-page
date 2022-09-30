@@ -5,6 +5,7 @@ import Branches from "./components/Branches";
 import { useState } from "react";
 import ContactManager from "./components/ContactManager";
 import SocialMedia from "./components/SocialMedia";
+import Search from "./components/Search";
 
 function App() {
   const [position, setPosition] = useState([35.703656, 51.320131]);
@@ -50,6 +51,7 @@ function App() {
         </div>
         <SocialMedia />
         <ContactManager />
+        <Search />
 
         <style jsx>{`
           main {

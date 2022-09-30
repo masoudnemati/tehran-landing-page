@@ -13,19 +13,34 @@ const Directions = ({
     <>
       <div className="container">
         <div className="directions-container">
-          <button
-            className="north"
-            onClick={() => {
-              setPosition([35.808121247699546, 51.400987416315644]);
-              setActiveDir("north");
-              setActiveName("شمال");
-              setBranchTel("02122171477");
-              setWorkerTel("09028193128");
-              setAddress("شمال تهران، ولنجک");
-            }}
-          >
-            شمال
-          </button>
+          <div className="top">
+            <button
+              className="north"
+              onClick={() => {
+                setPosition([35.808121247699546, 51.400987416315644]);
+                setActiveDir("north");
+                setActiveName("شمال");
+                setBranchTel("02122171477");
+                setWorkerTel("09028193128");
+                setAddress("شمال تهران، ولنجک");
+              }}
+            >
+              شمال
+            </button>
+            <button
+              className="west-city"
+              onClick={() => {
+                setPosition([35.7694430672955, 51.35531532682283]);
+                setActiveDir("west-city");
+                setActiveName("شهرک غرب");
+                setBranchTel("02188195425");
+                setWorkerTel(false);
+                setAddress("شهرک غرب، بلوار نورانی");
+              }}
+            >
+              شهرک غرب
+            </button>
+          </div>
           <div className="directions-middle">
             <button
               className="east"
@@ -67,19 +82,6 @@ const Directions = ({
               >
                 غرب
               </button>
-              <button
-                className="west-city"
-                onClick={() => {
-                  setPosition([35.7694430672955, 51.35531532682283]);
-                  setActiveDir("west-city");
-                  setActiveName("شهرک غرب");
-                  setBranchTel("02188195425");
-                  setWorkerTel(false);
-                  setAddress("شهرک غرب، بلوار نورانی");
-                }}
-              >
-                شهرک غرب
-              </button>
             </div>
           </div>
           <button
@@ -100,7 +102,7 @@ const Directions = ({
       <style jsx>{`
         .directions-container {
           padding: 0 1rem;
-          height: 260px;
+          height: 240px;
           border-radius: 3.5rem;
           box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
             rgba(17, 17, 26, 0.1) 0px 0px 8px;
@@ -150,21 +152,22 @@ const Directions = ({
         }
 
         .north {
+          margin-right: 90px;
           margin-bottom: 10px;
+          margin-left: 10px;
           background-color: ${activeDir === "north"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};
         }
 
         .west {
-          height: 30px;
           background-color: ${activeDir === "west"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};
         }
 
         .west-city {
-          height: 30px;
+          border-top-left-radius: 40px;
           background-color: ${activeDir === "west-city"
             ? "#C8FACC"
             : "rgba(255, 255, 255, 1)"};

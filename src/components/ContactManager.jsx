@@ -22,7 +22,7 @@ const ContactManager = () => {
           padding: 2rem 5vw;
           background: radial-gradient(
             circle,
-            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.8) 70%,
             transparent
           );
           text-align: center;

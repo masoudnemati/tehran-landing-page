@@ -50,7 +50,7 @@ const Map = ({ position }) => {
         scrollWheelZoom={true}
         zoomControl={false}
         style={{
-          height: 263,
+          height: 240,
           // , width: 350
         }}
         ref={mapRef}
@@ -95,7 +95,7 @@ const Map = ({ position }) => {
           .map-container {
             border-radius: 0;
             width: 307px;
-            height: 263px;
+            height: 240px;
             padding: 0;
             border-bottom-right-radius: 0.5rem;
             border-bottom-left-radius: 0.5rem;

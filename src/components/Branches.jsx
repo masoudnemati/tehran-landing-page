@@ -9,10 +9,10 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
           <span>ساعات کار: </span>۹ صبح<span> الی </span>
           ۱۲ شب
         </p>
-        <address>
+        {/* <address>
           <span>آدرس: </span>
           {address}
-        </address>
+        </address> */}
         <div className="owner-tel">
           {/* <p>
             <span>سرپرست واحد: </span>
@@ -38,6 +38,7 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
         .branches-container {
           padding: 1rem 1.25rem;
           width: 435px;
+          height: 211px;
           background-color: rgba(255, 255, 255, 0.5);
           backdrop-filter: blur(5px);
           border-radius: 0.5rem;
@@ -62,8 +63,8 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
         .branch-name {
           margin-top: 0;
           font-weight: bold;
-          font-size: large;
-          color: #3184ce;
+          font-size: larger;
+          color: #023663;
           margin-bottom: 2rem;
         }
 
@@ -127,6 +128,7 @@ const Branchs = ({ activeName, branchTel, workerTel, address }) => {
         @media screen and (max-width: 900px) {
           .branches-container {
             width: 275px;
+            height: auto;
             padding: 0.25rem 1rem;
             margin: 0;
             border-radius: 0;

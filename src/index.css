@@ -1,9 +1,15 @@
+@font-face {
+  font-family: "Negar";
+  src: url("./fonts/ANegaar.ttf");
+}
+
 body {
   margin: 0;
-  font-family: Vazirmatn, sans-serif;
+  font-family: Negar, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   direction: rtl;
+  font-size: 18px;
 }
 
 h1,
@@ -11,7 +17,7 @@ p,
 button,
 address,
 a {
-  font-family: Vazirmatn, sans-serif;
+  font-family: Negar, sans-serif;
 }
 
 code {
